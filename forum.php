@@ -18,9 +18,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["message"])) {
     $messagerErr = "a message is requierd";
   } else {
-    $messagerErr = test_input($_POST["message"]);
+    $message= test_input($_POST["message"]);
   }
 }
-
 // the error messages
+?>
+
+<?php
+echo $name;
+echo "<br>";
+echo $email;
+echo "<br>";
+echo $message;
+echo "<br>";
 ?>
