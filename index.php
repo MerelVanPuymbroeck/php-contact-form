@@ -8,26 +8,36 @@
     <link type="text/css" rel="stylesheet" href="style.css">
 </head>
 <body>
+<?php if (isset($_SESSION['errors'])) : ?>
+        <div class="row">
+            <div class="col-md-12 error">
+                <ul>
+                    <?php foreach ($_SESSION['errors'] as $errorArray) : ?>
+                        <li><?php echo $errorArray ?></li>
+                    <?php endforeach ?>
+                </ul>
+            </div>
+        </div>
+    <?php endif ?>
     
     <fieldset>
     <legend>Contact Us</legend>
     <form action="forum.php " method="post">
         <label>
                 Fullname:<br>
-            <input class="name" type="text" name="fullname" placeholder="your name"><br>
+                <input type="text" id="name" name="name" value="<?php echo $_SESSION['name'] ?>"><br>
         </label>
         <label> 
                 Email: <br>
-                <input class="email" type="text" name="email" placeholder="your email"><br>
+                <input type="text" id="email" name="email" value="<?php echo $_SESSION['email'] ?>"><br>
         </label>       
         <label>
                 Your message:<br>
-                <input class="message" type="text" name="message"><br>
+                <textarea name="message" id="message" cols="30" rows="10"><?php echo $_SESSION['message'] ?></textarea><br>
                 <br>
                 <input type="submit" value="Submit">
         </label>
 </form>
 </fieldset>
-</body>
 </body>
 </html>
