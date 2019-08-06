@@ -32,3 +32,5 @@ input[type=submit] {
     border-color: #D8D8D8;
     font-family: 'Montserrat', sans-serif;
   }
+
+  .error {color: #FF0000;}

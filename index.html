@@ -10,18 +10,18 @@
 <body>
     <fieldset>
     <legend>Contact Us</legend>
-    <form action="forum.php" method="post">
+    <form action="forum.php" method="post"></form>
         <label>
                 Fullname:<br>
-            <input class="name" type="text" name="fullname" placeholder="your name"><br>
+            <input class="name" type="text" name="fullname" placeholder="your name"><span class="error">* <?php echo $nameErr;?></span><br>
         </label>
         <label> 
                 Email: <br>
-                <input class="email" type="text" name="email" placeholder="your email"><br>
+                <input class="email" type="text" name="email" placeholder="your email"><span class="error">* <?php echo $emailErr;?></span><br>
         </label>       
         <label>
                 Your message:<br>
-                <input class="message" type="text" name="message"><br>
+                <input class="message" type="text" name="message"><span class="error">* <?php echo $messageErr;?></span><br>
                 <br>
                 <input type="submit" value="Submit">
         </label>
