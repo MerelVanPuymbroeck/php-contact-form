@@ -34,3 +34,7 @@ input[type=submit] {
   }
 
   .error {color: #FF0000;}
+
+  .errorplaats {
+    height: 45px;
+  }

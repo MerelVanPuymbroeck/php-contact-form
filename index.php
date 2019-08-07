@@ -1,45 +1,3 @@
-<?php
-if ($_REQUEST['submit'] == 'Submit') {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
-
-    $_SESSION['name'] = $name;
-    $_SESSION['email'] = $email;
-    $_SESSION['message'] = $message;
-
-    $errorArray = [];
-
-    //name validation
-    if ($name == "") {
-        array_push($errorArray, "Fill in your name");
-    }
-
-    /*email validation
-    if ($email == "") {
-        array_push($errorArray, "Fill in your email");
-    } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        array_push($errorArray, "email is not valid");
-    }
-    */
-
-    //message validation
-    if ($message == "") {
-        array_push($errorArray, "message is empty");
-    }
-
-    //unset($_SESSION['errors']);
-
-    if (!empty($errorArray)) {
-        $_SESSION['errors'] = $errorArray;
-        header('Location: index.php');
-    }
-
-    
-}
-echo "<script>console.log('" . $name .  "');</script>";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +19,6 @@ echo "<script>console.log('" . $name .  "');</script>";
             </div>
         </div>
     <?php endif ?>
-    
     <fieldset>
     <legend>Contact Us</legend>
     <form action="forum.php " method="POST">
@@ -75,11 +32,15 @@ echo "<script>console.log('" . $name .  "');</script>";
         </label>       
         <label>
                 Your message:<br>
-                <textarea name="message" id="message" cols="30" rows="10"><?php echo $_SESSION['message'] ?></textarea><br>
+                <textarea name="message" id="message" cols="30" rows="10"><?php echo $_SESSION['message'] ?>
+                </textarea>
                 <br>
                 <input type="submit" name='submit' value="Submit">
         </label>
 </form>
 </fieldset>
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>

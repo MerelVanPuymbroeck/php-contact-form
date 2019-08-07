@@ -1,9 +1,11 @@
 <?php
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 session_start();
 
+//remember the input
 $name = $_POST['name'];
 $email = $_POST['email'];
 $message = $_POST['message'];
@@ -19,16 +21,16 @@ if ($name == "") {
 array_push($errorArray, "Fill in your name");
 }
 
-//email validation
+//email validation, @sanitization
 if ($email == "") {
 array_push($errorArray, "Fill in your email");
 } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-array_push($errorArray, "email is not valid");
+array_push($errorArray, "Email is not valid");
 }
 
 //message validation
 if ($message == "") {
-array_push($errorArray, "message is empty");
+array_push($errorArray, "Message is empty");
 }
 
 //unset($_SESSION['errors']);
