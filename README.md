@@ -2,7 +2,7 @@
 
 ### What?
 
-processing a contact form with PHP that really works. 
+processing a contact form with PHP that really works and submiting.
 
 ### When and where?
 I did made this is from 1 august until 7 august , in The Beacon for BeCode.
