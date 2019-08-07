@@ -30,5 +30,7 @@ As you can see above I did work with a if statement where I let the errors work.
 Yes I did like it, but in the beginning I found it verry dificult to understand it how PhP works. But now I am glad how it looks and how I made it. 
 Still I need to work quiet a bit more on my php skills. 
 
+### How did I felt me while working on this task for these days?
+
 ![](giphy.gif)
 
